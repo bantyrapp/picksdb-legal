@@ -1,6 +1,6 @@
-# Legal Documents
+# Legal Documents - Picksdb
 
-Public repository for Privacy Policy and Terms of Service.
+Public repository for Privacy Policy and Terms of Service for Picksdb.
 
 ## Documents
 
