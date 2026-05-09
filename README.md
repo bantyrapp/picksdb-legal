@@ -1,9 +1,28 @@
-# Legal Documents - Picksdb
+# Legal documents — PicksDb
 
-Public repository for Privacy Policy and Terms of Service for Picksdb.
+Public HTML for **PicksDb** (operated by **PicksDb LLC**). These pages are the canonical URLs linked from the mobile app and website (e.g. App Store privacy/terms requirements).
 
-## Documents
+## Published copies (GitHub Pages)
 
-- [Privacy Policy](PRIVACY_POLICY.html)
-- [Terms of Service](TERMS_OF_SERVICE.html)
+After you push to `main`, Pages serves:
 
+| Document | Live URL |
+|----------|----------|
+| Terms of Service | [TERMS_OF_SERVICE.html](https://bantyrapp.github.io/picksdb-legal/TERMS_OF_SERVICE.html) |
+| Privacy Policy | [PRIVACY_POLICY.html](https://bantyrapp.github.io/picksdb-legal/PRIVACY_POLICY.html) |
+| What We Sell | [WHAT_WE_SELL.html](https://bantyrapp.github.io/picksdb-legal/WHAT_WE_SELL.html) |
+
+## Repo files
+
+- [TERMS_OF_SERVICE.html](TERMS_OF_SERVICE.html)
+- [PRIVACY_POLICY.html](PRIVACY_POLICY.html)
+- [WHAT_WE_SELL.html](WHAT_WE_SELL.html)
+
+## How to update
+
+1. Edit the HTML in this repository.
+2. Commit and push to `main` (e.g. `git add -A && git commit -m "docs(legal): …" && git push`).
+3. Confirm Pages finished deploying under **Actions** or **Environments**, then open the live URLs above.
+4. If the app tracks a legal “version” for re-consent, bump that constant in the app repo when you make **material** policy changes.
+
+*Not legal advice — have qualified counsel review substantive changes.*
