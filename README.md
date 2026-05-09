@@ -14,9 +14,14 @@ After you push to `main`, Pages serves:
 
 ## Repo files
 
+- [legal-theme.css](legal-theme.css) — shared PicksDb-branded styles for all pages
 - [TERMS_OF_SERVICE.html](TERMS_OF_SERVICE.html)
 - [PRIVACY_POLICY.html](PRIVACY_POLICY.html)
 - [WHAT_WE_SELL.html](WHAT_WE_SELL.html)
+
+## Trademarks (™ / ®)
+
+Pages may reference **PicksDb™**, **PicksDb Leaderboard™**, and **PicksDb Coins™** with a **™** to assert common-law or pending rights. **Federal registration** (®) requires approved applications with the **USPTO**—work with IP counsel to file and maintain registrations. These HTML documents are **not** a substitute for a clearance search or registration strategy.
 
 ## How to update
 
