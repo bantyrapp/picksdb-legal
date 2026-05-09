@@ -1,19 +1,25 @@
 /**
- * PicksDb legal documents — shared branding (matches app: primary #1DA1F2).
- * Used by GitHub Pages: TERMS_OF_SERVICE.html, PRIVACY_POLICY.html, WHAT_WE_SELL.html
+ * PicksDb legal documents — shared branding (matches app ThemeContext).
+ * Primary #1DA1F2, surfaces #F8F9FA, warning #FF9500.
  */
 
 :root {
-  --picksdb-primary: #1DA1F2;
+  --picksdb-primary: #1da1f2;
   --picksdb-primary-dark: #0d8bd9;
-  --text: #1C1C1E;
-  --text-secondary: #48484A;
-  --muted: #8E8E93;
+  --picksdb-primary-soft: rgba(29, 161, 242, 0.12);
+  --picksdb-warning: #ff9500;
+  --picksdb-warning-soft: rgba(255, 149, 0, 0.12);
+  --text: #1c1c1e;
+  --text-secondary: #48484a;
+  --muted: #8e8e93;
   --bg-page: #f0f4f8;
+  --bg-surface: #f8f9fa;
   --bg-card: #ffffff;
-  --border: #E5E5E7;
+  --border: #e5e5e7;
   --radius: 12px;
+  --radius-sm: 10px;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -31,8 +37,9 @@ body {
   font-size: 16px;
   line-height: 1.65;
   color: var(--text);
-  background: linear-gradient(180deg, #e8f4fc 0%, var(--bg-page) 120px);
+  background: linear-gradient(165deg, #dff2fc 0%, var(--bg-page) 45%, var(--bg-surface) 100%);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 .legal-shell {
@@ -42,11 +49,23 @@ body {
 }
 
 .legal-card {
+  position: relative;
   background: var(--bg-card);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
   padding: 28px 26px 36px;
+  overflow: hidden;
+}
+
+.legal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--picksdb-primary) 0%, var(--picksdb-primary-dark) 55%, var(--picksdb-primary) 100%);
 }
 
 @media (min-width: 640px) {
@@ -62,8 +81,14 @@ body {
 .legal-header {
   text-align: center;
   margin-bottom: 28px;
-  padding-bottom: 20px;
+  padding: 8px 0 22px;
   border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--picksdb-primary-soft) 0%, transparent 100%);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  margin-left: -8px;
+  margin-right: -8px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .legal-logo {
@@ -89,24 +114,38 @@ body {
 .nav-docs {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 14px;
+  gap: 10px;
   justify-content: center;
   margin-bottom: 28px;
-  padding: 12px 14px;
-  background: linear-gradient(135deg, rgba(29, 161, 242, 0.08) 0%, rgba(29, 161, 242, 0.02) 100%);
-  border: 1px solid rgba(29, 161, 242, 0.2);
-  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
 }
 
 .nav-docs a {
+  display: inline-flex;
+  align-items: center;
   color: var(--picksdb-primary-dark);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--picksdb-primary-soft);
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
 }
 
 .nav-docs a:hover {
-  text-decoration: underline;
+  background: rgba(29, 161, 242, 0.2);
+  border-color: rgba(29, 161, 242, 0.35);
+}
+
+.nav-docs a:focus-visible {
+  outline: 2px solid var(--picksdb-primary);
+  outline-offset: 2px;
 }
 
 /* Typography */
@@ -125,7 +164,9 @@ h2 {
   font-weight: 700;
   color: var(--text);
   margin: 2rem 0 0.75rem;
-  padding-top: 0.25rem;
+  padding: 0.35rem 0 0.35rem 12px;
+  border-left: 3px solid var(--picksdb-primary);
+  margin-left: -2px;
 }
 
 h2:first-of-type {
@@ -159,6 +200,12 @@ a {
   font-weight: 600;
 }
 
+a:focus-visible {
+  outline: 2px solid var(--picksdb-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 .last-updated,
 .meta {
   color: var(--muted);
@@ -169,11 +216,13 @@ a {
 
 /* Callouts */
 .highlight {
-  background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+  background: linear-gradient(135deg, var(--picksdb-warning-soft) 0%, #fff9e6 100%);
   padding: 16px 18px;
-  border-left: 4px solid #f5a623;
-  border-radius: 0 10px 10px 0;
+  border-left: 4px solid var(--picksdb-warning);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   margin: 1.25rem 0;
+  border: 1px solid rgba(255, 149, 0, 0.22);
+  border-left-width: 4px;
 }
 
 .highlight p:last-child {
@@ -181,21 +230,39 @@ a {
 }
 
 .callout {
-  background: linear-gradient(135deg, rgba(29, 161, 242, 0.1) 0%, rgba(29, 161, 242, 0.03) 100%);
+  background: linear-gradient(135deg, var(--picksdb-primary-soft) 0%, rgba(29, 161, 242, 0.04) 100%);
   border-left: 4px solid var(--picksdb-primary);
   padding: 16px 18px;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   margin: 1.25rem 0;
+  border: 1px solid rgba(29, 161, 242, 0.18);
+  border-left-width: 4px;
+}
+
+.callout-enforcement {
+  background: linear-gradient(135deg, #f6f7f9 0%, var(--bg-surface) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--text-secondary);
+  padding: 16px 18px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 1.25rem 0;
+  font-size: 0.9375rem;
+}
+
+.callout-enforcement p:last-child {
+  margin-bottom: 0;
 }
 
 .entity-banner {
-  background: var(--text);
+  background: linear-gradient(135deg, #1a1d21 0%, #2c2c2e 100%);
   color: #fff;
-  padding: 14px 18px;
-  border-radius: 10px;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
   margin: 0 0 1.25rem;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.55;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .entity-banner strong {
@@ -218,11 +285,19 @@ a {
 }
 
 .contact {
-  background: var(--bg-page);
-  padding: 18px 20px;
-  border-radius: 10px;
+  background: var(--bg-surface);
+  padding: 20px 22px;
+  border-radius: var(--radius-sm);
   margin-top: 1.5rem;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.contact h3 {
+  margin-top: 0;
+  color: var(--text);
+  border-left: none;
+  padding-left: 0;
 }
 
 .legal-footer {
