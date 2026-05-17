@@ -11,6 +11,8 @@ After you push to `main`, Pages serves:
 | Terms of Service | [TERMS_OF_SERVICE.html](https://bantyrapp.github.io/picksdb-legal/TERMS_OF_SERVICE.html) |
 | Privacy Policy | [PRIVACY_POLICY.html](https://bantyrapp.github.io/picksdb-legal/PRIVACY_POLICY.html) |
 | What We Sell | [WHAT_WE_SELL.html](https://bantyrapp.github.io/picksdb-legal/WHAT_WE_SELL.html) |
+| Terms (PDF) | [PicksDb_Terms_of_Service.pdf](https://bantyrapp.github.io/picksdb-legal/PicksDb_Terms_of_Service.pdf) |
+| Privacy (PDF) | [PicksDb_Privacy_Policy.pdf](https://bantyrapp.github.io/picksdb-legal/PicksDb_Privacy_Policy.pdf) |
 
 ## Repo files
 
@@ -18,6 +20,7 @@ After you push to `main`, Pages serves:
 - [TERMS_OF_SERVICE.html](TERMS_OF_SERVICE.html)
 - [PRIVACY_POLICY.html](PRIVACY_POLICY.html)
 - [WHAT_WE_SELL.html](WHAT_WE_SELL.html)
+- `PicksDb_Terms_of_Service.pdf` / `PicksDb_Privacy_Policy.pdf` — printable copies (regenerate: `npm run legal:publish` in main app repo)
 
 ## Trademarks (™ / ®)
 
